@@ -1,21 +1,73 @@
-var sentence = [];
-var index = 0;
-do {
-	sentence[index] =prompt("Word: "+index);
-index++
+//Initialize Variables
+	var sentence = [];
+	var replacements = [];
+	var index = 0;
+	//Call Functions
+	filler(sentence, "Next Word" );
+	filler(replacements, "Next Position");
+	replace(sentence,replacements,"Part of Speech for word in sentence");
+	alert("Switch Positions");
+	//Which words are being replaced
+function filler (myArray,myPrompt){
+index = -1;
+// first do to prompt for it.
+do{
+	index++;
+	myArray[index] = prompt(myPrompt+"["+index+"] = ");
 }
-while (sentence[index-1]!="^");
+	while(myArray[index] != "^");
+		myArray.pop();
+		console.log(myArray);
+}
+ function replace (mySArray,myRArray,myPrompt) {
+	for(index = 0; index < myRArray.length; index++) {
+			mySArray[myRArray[index]] = prompt(myPrompt+"["+[myRArray[index]]+"] = ");
+			}
+			while(myArray[index] != "^");
+			console.log(myArray);
+ }
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ /*
+do {
+	index++
+	sentence[index] =prompt("Word: "+index);
+
+}
+while (sentence[index]!="^");
 console.log(sentence);
 
 // replacemens
 
 var replacements = [];
-var index = 0;
+var index = -1;
 do {
+	index++
 	replacements[index] =prompt("position:"+index+ "");
-index++
+
 }
-while (replacements[index-1]!="^");
+while (replacements[index]!="^");
 console.log(replacements);
 
 for (index = 0; index < replacements.length-1; index++)
